@@ -10,12 +10,11 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-
+/*
+ * 游戏主窗口
+ */
 public class GameFrame extends JFrame implements ActionListener {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private JMenuBar menuBar = new JMenuBar();
@@ -30,13 +29,15 @@ public class GameFrame extends JFrame implements ActionListener {
 	private JMenuItem menuItemAbout = new JMenuItem();
 
 	private JButton[][] jbut = null;
-
+	
 	public GameFrame() {
 		this(3, 3);
 	}
-
+	/*
+	 * 初始化游戏窗体
+	 */
 	public GameFrame(int row, int col) {
-		setTitle("ƴͼ��Ϸ");
+		setTitle("拼图游戏");
 		setSize(370, 370);
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -55,22 +56,24 @@ public class GameFrame extends JFrame implements ActionListener {
 		}
 		unorderImage();
 	}
-
+	/*
+	 * 初始化菜单栏
+	 */
 	public void initMenu() {
-		menuItemGameStart.setText("��ʼ��Ϸ");
+		menuItemGameStart.setText("开始游戏");
 		menuItemGameStart.addActionListener(this);
-		menuItemGameExit.setText("������Ϸ");
+		menuItemGameExit.setText("结束游戏");
 		menuItemGameExit.addActionListener(this);
-		menuGame.setText("ѡ��");
+		menuGame.setText("选项");
 		menuGame.add(menuItemGameStart);
 		menuGame.add(menuItemGameExit);
 
-		menuHelp.setText("����");
-		displayOriginal.setText("��ʾ���");
+		menuHelp.setText("操作");
+		displayOriginal.setText("显示结果");
 		displayOriginal.addActionListener(this);
 		menuHelp.add(displayOriginal);
 
-		menuAbout.setText("����");
+		menuAbout.setText("关于");
 		menuItemAbout.setText("About");
 		menuItemAbout.addActionListener(this);
 		menuAbout.add(menuItemAbout);
@@ -80,7 +83,9 @@ public class GameFrame extends JFrame implements ActionListener {
 		menuBar.add(menuAbout);
 		setJMenuBar(menuBar);
 	}
-
+	/*
+	 * 菜单栏事件监听
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == menuItemGameStart) {
@@ -113,7 +118,9 @@ public class GameFrame extends JFrame implements ActionListener {
 		}
 
 	}
-
+	/*
+	 * 初始化图片（原图）
+	 */
 	public void initImage() {
 		for (int i = 0; i < jbut.length; i++) {
 			for (int j = 0; j < jbut[i].length; j++) {
@@ -123,7 +130,9 @@ public class GameFrame extends JFrame implements ActionListener {
 		}
 		jbut[jbut.length - 1][0].setIcon(null);
 	}
-
+	/*
+	 * 随机打乱图片
+	 */
 	public void unorderImage() {
 		initImage();
 		int x = jbut.length - 1;

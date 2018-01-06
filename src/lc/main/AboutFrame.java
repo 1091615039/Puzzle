@@ -5,17 +5,16 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-
+/*
+ * “关于”窗口
+ */
 public class AboutFrame extends JDialog implements ActionListener {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	private JLabel label1 = new JLabel("ƴͼ��Ϸ1.0");
+	private JLabel label1 = new JLabel("拼图游戏1.0");
 	private JLabel label2 = new JLabel("developer:LiuChang");
-	private JButton but = new JButton("�ر�");
+	private JButton but = new JButton("关闭");
 
 	public AboutFrame() {
 		setTitle("About");
@@ -33,7 +32,9 @@ public class AboutFrame extends JDialog implements ActionListener {
 		add(but);
 		setModal(true);
 	}
-
+	/*
+	 * 释放窗体内存
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		dispose();

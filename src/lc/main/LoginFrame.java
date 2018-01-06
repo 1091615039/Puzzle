@@ -8,23 +8,24 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-
+/*
+ * ç™»é™†çª—å£
+ */
 public class LoginFrame extends JFrame implements ActionListener {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	private JLabel jUserName = new JLabel("ÓÃ»§Ãû:");
-	private JLabel jPassword = new JLabel(" ÃÜÂë :");
+	private JLabel jUserName = new JLabel("ç”¨æˆ·å:");
+	private JLabel jPassword = new JLabel(" å¯†ç  :");
 	private JTextField tUserName = new JTextField("Liuc");
 	private JPasswordField tPassword = new JPasswordField("1234");
-	private JButton jloginbut = new JButton("µÇÂ½");
-	private JButton jexitbut = new JButton("ÍË³ö");
-
+	private JButton jloginbut = new JButton("ç™»é™†");
+	private JButton jexitbut = new JButton("é€€å‡º");
+	/*
+	 * åˆå§‹åŒ–ç™»é™†çª—å£
+	 */
 	public LoginFrame() {
-		setTitle("µÇÂ¼´°¿Ú");
+		setTitle("ç™»å½•çª—å£");
 		setSize(240, 180);
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -47,7 +48,10 @@ public class LoginFrame extends JFrame implements ActionListener {
 		add(jexitbut);
 
 	}
-
+	
+	/*
+	 * ç™»é™†åˆ¤æ–­
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == jloginbut) {
@@ -56,7 +60,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 				GameFrame gameframe = new GameFrame();
 				gameframe.setVisible(true);
 			} else {
-				JOptionPane.showMessageDialog(null, "ÓÃ»§Ãû»òÃÜÂë´íÎó£¡", "´íÎó", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼", "é”™è¯¯", JOptionPane.ERROR_MESSAGE);
 			}
 		} else if (e.getSource() == jexitbut) {
 			System.exit(0);

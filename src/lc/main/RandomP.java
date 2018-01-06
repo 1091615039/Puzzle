@@ -1,9 +1,13 @@
 package lc.main;
 import java.util.ArrayList;
 import java.util.Random;
-
+/*
+ * 随机化图片类
+ */
 public class RandomP {
-
+	/*
+	 * 初始化四个方向
+	 */
 	public static final int TOP = 0;
 	public static final int DOWN = 1;
 	public static final int LEFT = 2;
@@ -23,8 +27,13 @@ public class RandomP {
 		this.rows = rows;
 		this.cols = cols;
 	}
-
+	/*
+	 * 随机打乱一步
+	 */
 	public int next(int x, int y) {
+		/*
+		 * 判断下一步可移动方向
+		 */
 		if (x == 0 && y == 0) {
 			list.add(DOWN);
 			list.add(RIGHT);
@@ -63,6 +72,9 @@ public class RandomP {
 			list.remove(new Integer(notvalue));
 		}
 		int result = list.get(r.nextInt(list.size()));
+		/*
+		 * 保证打乱一步之后 下一步不回到原位置
+		 */
 		switch (result) {
 		case TOP:
 			notvalue = DOWN;
